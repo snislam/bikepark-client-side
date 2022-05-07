@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemCard = ({ product }) => {
-    const { name, price, img, supplier, quantity, description, id } = product;
+    const { name, price, img, supplier, quantity, description, _id } = product;
     return (
         <div className='border'>
             <img src={img} alt={name} />
@@ -12,7 +12,7 @@ const ItemCard = ({ product }) => {
                 <p className='mb-2 text-slate-900'>Price: ${price}</p>
                 <p className='mb-2 text-slate-900'>Quantity: {quantity}</p>
                 <p className='text-md font-medium text-slate-900 mb-7'>{description}</p>
-                <Link to={`/inventory/${id}`} className='bg-gray-500 duration-700 hover:bg-gray-700 text-white py-2 px-5'>Stock Update</Link>
+                <Link to={`/inventory/${_id}`} className='bg-gray-500 duration-700 hover:bg-gray-700 text-white py-2 px-5'>Stock Update</Link>
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './Common/Footer/Footer';
 import Header from './Common/Header/Header';
+import Loading from './Common/Loading/Loading';
 import RequireAuth from './Common/RequireAuth/RequireAuth';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -27,6 +28,7 @@ function App() {
             <StockUpdate />
           </RequireAuth>
         } />
+        <Route path='/loading' element={<Loading />} />
       </Routes>
       <Footer />
     </div>

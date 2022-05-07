@@ -25,7 +25,7 @@ const InventoryItems = () => {
                 <h1 className='text-5xl text-center font-semibold py-5 mb-4'>Our Items</h1>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2'>
                     {
-                        products.map(product => <ItemCard key={product.id} product={product} />)
+                        products.map(product => <ItemCard key={product._id} product={product} />)
                     }
                 </div>
                 <div className='py-5 flex justify-center items-center'>
