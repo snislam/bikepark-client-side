@@ -6,10 +6,7 @@ import { signOut } from 'firebase/auth'
 import auth from '../../firebase.init';
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Login', href: '/login', current: false },
-    { name: 'Register', href: '/register', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Home', href: '/', current: false }
 ]
 
 function classNames(...classes) {
@@ -41,7 +38,7 @@ const Header = () => {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex">
-                                    <h2 className='text-3xl text-slate-100 font-semibold'>BIKE PARK</h2>
+                                    <h2 className='text-3xl text-slate-100 font-semibold'><Link to='/'>BIKE PARK</Link></h2>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
@@ -59,6 +56,12 @@ const Header = () => {
                                         ))}
                                         {
                                             user && <button className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' onClick={handlesignOut}>Sign Out</button>
+                                        }
+                                        {
+                                            !user && <>
+                                                <Link to='/login' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Login</Link>
+                                                <Link to='/register' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Register</Link>
+                                            </>
                                         }
                                     </div>
                                 </div>
@@ -80,6 +83,15 @@ const Header = () => {
                                     aria-current={item.current ? 'page' : undefined}
                                 >{item.name}</Link>
                             ))}
+                            {
+                                user && <button className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium text-left w-full' onClick={handlesignOut}>Sign Out</button>
+                            }
+                            {
+                                !user && <>
+                                    <Link to='/login' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full block'>Login</Link>
+                                    <Link to='/register' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full block'>Register</Link>
+                                </>
+                            }
                         </div>
                     </Disclosure.Panel>
                 </>
