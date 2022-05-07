@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ItemCard from '../../../Common/ItemCard/ItemCard';
+import ItemCard from './ItemCard/ItemCard';
 
 const InventoryItems = () => {
     const [products, setProducts] = useState([]);
@@ -22,7 +22,7 @@ const InventoryItems = () => {
     return (
         <div className='bg-gray-100 py-5'>
             <div className='container mx-auto'>
-                <h1 className='text-3xl text-center font-semibold py-5'>Our Items</h1>
+                <h1 className='text-5xl text-center font-semibold py-5 mb-4'>Our Items</h1>
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2'>
                     {
                         products.map(product => <ItemCard key={product.id} product={product} />)

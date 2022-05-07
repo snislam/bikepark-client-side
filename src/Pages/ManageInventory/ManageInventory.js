@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ManageCard from '../../Common/ManageCard/ManageCard';
+import ManageCard from './ManageCard/ManageCard';
 
 const ManageInventory = () => {
     const [products, setProducts] = useState([]);
