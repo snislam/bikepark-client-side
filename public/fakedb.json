@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "name": "Royal Enfield 2022",
         "img": "https://i.ibb.co/JctcttT/bike-1.jpg",
         "price": 1200,
@@ -9,7 +8,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 2,
         "name": "King Royal 2022",
         "img": "https://i.ibb.co/3mnswDT/bike-2.jpg",
         "price": 1500,
@@ -18,7 +16,6 @@
         "description": "Latest collection of Bike Park in 2022. The biggest Trandy bike at this time in USA and Australia. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 3,
         "name": "Royal  2019",
         "img": "https://i.ibb.co/RjgvTsN/bike-3.jpg",
         "price": 2550,
@@ -27,7 +24,6 @@
         "description": "Best quality bike collection of Bike Park. Super quality products with a long time guarantee for the bike security and protecting purpose. Extra power 2022"
     },
     {
-        "id": 4,
         "name": "Enfield X 5T 2022",
         "img": "https://i.ibb.co/jHzdvFv/bike-4.jpg",
         "price": 2900,
@@ -36,7 +32,6 @@
         "description": "We are providing the best quality in terms of price and parts. This is the latest collection of Bike Park. This is now on tranding according to indeed survey. "
     },
     {
-        "id": 5,
         "name": "Gixxer 350 xt 2017",
         "img": "https://i.ibb.co/0MhwDJ7/bike-5.jpg",
         "price": 1900,
@@ -45,7 +40,6 @@
         "description": "Bike Park offering this collection in 2022 . This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 6,
         "name": "Tata x pro 5T 2000",
         "img": "https://i.ibb.co/XZxyKRm/bike-6.jpg",
         "price": 2000,
@@ -54,7 +48,6 @@
         "description": "New model bike is crazy but this is super design. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 7,
         "name": "Royal Enfield 1997",
         "img": "https://i.ibb.co/Q9sMXzg/bike-7.jpg",
         "price": 2200,
@@ -63,7 +56,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 8,
         "name": "Yamaha FZ 90 2000",
         "img": "https://i.ibb.co/NZZxdmV/bike-8.jpg",
         "price": 1600,
@@ -72,7 +64,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 9,
         "name": "TN Royal enfild 2021",
         "img": "https://i.ibb.co/0sLmBBG/bike-9.jpg",
         "price": 2900,
@@ -81,7 +72,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 10,
         "name": "Royal Enfield 1989",
         "img": "https://i.ibb.co/kyCxpqV/bike-10.jpg",
         "price": 2900,
@@ -90,7 +80,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 11,
         "name": "X-1 CT450 Zixxer 19",
         "img": "https://i.ibb.co/fkcG4G6/bike-11.jpg",
         "price": 3400,
@@ -99,7 +88,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 12,
         "name": "Tata Max-13 21 Pro",
         "img": "https://i.ibb.co/LgQ0cs2/bike-12.jpg",
         "price": 4100,
@@ -108,7 +96,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 13,
         "name": "Del GX-2019 ",
         "img": "https://i.ibb.co/6RQhQjH/bike-13.jpg",
         "price": 2300,
@@ -117,7 +104,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 14,
         "name": "Hero 350 XT 100 2019",
         "img": "https://i.ibb.co/7zx0Lmy/bike-14.jpg",
         "price": 1500,
@@ -126,7 +112,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 15,
         "name": "CT-650 Bajaj 93 BD 2017",
         "img": "https://i.ibb.co/Pw8txfr/bike-15.jpg",
         "price": 2150,
@@ -135,7 +120,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 16,
         "name": "Royal Enfield Pikasu 1999",
         "img": "https://i.ibb.co/z4y5pvT/bike-16.jpg",
         "price": 2022,
@@ -144,7 +128,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 17,
         "name": "Royal 650 CT-888 20000",
         "img": "https://i.ibb.co/m4VSgP4/bike-17.jpg",
         "price": 2900,
@@ -153,7 +136,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 18,
         "name": "Racing bike XT-5Y 456 2022",
         "img": "https://i.ibb.co/SKdFFFH/bike-18.jpg",
         "price": 2450,
@@ -162,7 +144,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 19,
         "name": "EndGame 250 GTC 3500 2018",
         "img": "https://i.ibb.co/s5RVkhD/bike-19.jpg",
         "price": 1200,
@@ -171,7 +152,6 @@
         "description": "This is the latest collection of Bike Park. This is now on tranding according to indeed survey. We are providing the best quality in terms of price and parts"
     },
     {
-        "id": 20,
         "name": "Latest Royal Enfield 2022",
         "img": "https://i.ibb.co/nkQTh1s/bike-20.jpg",
         "price": 1750,

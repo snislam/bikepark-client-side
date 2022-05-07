@@ -7,7 +7,7 @@ const InventoryItems = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('fakedb.json')
+        axios.get(`http://localhost:5000/bikeitems`)
             .then(data => {
                 const productsItem = data.data;
                 if (productsItem.length > 6) {

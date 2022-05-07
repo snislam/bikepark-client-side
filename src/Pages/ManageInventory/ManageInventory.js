@@ -6,7 +6,7 @@ const ManageInventory = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('fakedb.json')
+        axios.get(`http://localhost:5000/bikeitems`)
             .then(data => {
                 setProducts(data.data)
             });
