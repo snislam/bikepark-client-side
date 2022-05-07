@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Footer from './Common/Footer/Footer';
 import Header from './Common/Header/Header';
@@ -30,6 +31,7 @@ function App() {
         } />
         <Route path='/loading' element={<Loading />} />
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const StockUpdate = () => {
     const { id } = useParams();
@@ -16,8 +17,9 @@ const StockUpdate = () => {
     const handleDeliver = id => {
         const { quantity, ...rest } = item;
         const newQuantity = quantity - 1;
-        if (newQuantity === 0) {
-
+        if (newQuantity === -1) {
+            toast('Opps! No product is available to deliver.');
+            return;
         }
         const newItem = { quantity: newQuantity, ...rest }
         setItem(newItem)
@@ -58,6 +60,9 @@ const StockUpdate = () => {
                         </form>
                     </div>
                 </div>
+            </div>
+            <div className='py-5 flex justify-center'>
+                <Link className='bg-blue-700 duration-700 hover:bg-blue-900 py-3 px-10 text-slate-100' to='/inventory'>Manage Inventories</Link>
             </div>
         </div>
     );
