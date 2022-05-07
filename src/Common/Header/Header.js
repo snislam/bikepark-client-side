@@ -6,7 +6,8 @@ import { signOut } from 'firebase/auth'
 import auth from '../../firebase.init';
 
 const navigation = [
-    { name: 'Home', href: '/', current: false }
+    { name: 'Home', href: '/', current: false },
+    { name: 'Add Item', href: '/additem', current: false },
 ]
 
 function classNames(...classes) {
