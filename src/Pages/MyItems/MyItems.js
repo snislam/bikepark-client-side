@@ -22,6 +22,7 @@ const MyItems = () => {
             axios.get(`http://localhost:5000/bikeitems?email=${email}`)
                 .then(response => {
                     setItems(response.data)
+                    toast("Delete Successful")
                 })
         } else {
             toast('Okay dear, I am keeping it up ')

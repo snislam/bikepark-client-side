@@ -1,8 +1,9 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React, { useEffect, useState } from 'react';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import './Login.css'
 
 const Login = () => {
     const [err, setErr] = useState('');
@@ -10,10 +11,18 @@ const Login = () => {
     const [user] = useAuthState(auth);
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const [signInWithGoogle, user1, , error] = useSignInWithGoogle(auth);
+    // const [sendPasswordResetEmail, , error1] = useSendPasswordResetEmail(auth);
 
-    if (user) {
-        navigate(from, { replace: true })
-    }
+    useEffect(() => {
+        if (user || user1) {
+            navigate(from, { replace: true })
+        }
+
+        if (error) {
+            setErr(error.message)
+        }
+    }, [error, from, navigate, user, user1])
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -31,6 +40,11 @@ const Login = () => {
 
         console.log(email, password);
     };
+
+    const handleResetPassword = () => {
+
+    }
+
     return (
         <div className='h-screen flex bg-gray-bg1'>
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
@@ -61,6 +75,9 @@ const Login = () => {
                     <div>
                         <p className='text-red-500'>{err}</p>
                     </div>
+                    <div>
+                        <p onClick={handleResetPassword} className='text-blue-500 cursor-pointer'>Reset Password</p>
+                    </div>
 
                     <div>
                         <p>Haven't Account? <span className='text-red-700'><Link to='/register'>Create Account</Link></span></p>
@@ -74,8 +91,18 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
+                <div className='mt-5'>
+                    <div className='flex justify-evenly items-center'>
+                        <div className='left-bar'></div>
+                        <div className='or-div px-5'>OR</div>
+                        <div className='right-bar'></div>
+                    </div>
+                    <div>
+                        <button onClick={() => signInWithGoogle()} className='bg-blue-700 hover:bg-blue-900 w-full py-2 text-white duration-700 mt-4'>SignIn With Google</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div >
     );
 };
 

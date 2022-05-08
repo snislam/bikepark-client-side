@@ -8,6 +8,7 @@ import auth from '../../firebase.init';
 const navigation = [
     { name: 'Home', href: '/', current: false },
     { name: 'Add Item', href: '/additem', current: false },
+    { name: 'Blogs', href: '/blogs', current: false },
 ]
 
 function classNames(...classes) {

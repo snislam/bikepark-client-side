@@ -1,0 +1,18 @@
+[
+    {
+        "question": "What is the difference between Javascript and NodeJs?",
+        "answer": "JavaScript is a popular programming language . It is generelally use for  web development purpous. It has also another uses but most of the cases it is used in client side. Node JS is an extension of JavaScript libraries, but it came with some undefined utilities like non-blocking operating system. Node is running using v8 engine. But Javascript is running almost all browser. For security purpose, sometimes Node js displayed to the user that you have logged in from a different places."
+    },
+    {
+        "question": "When should you use nodejs and when should you use mongodb?",
+        "answer": "Node js is a serverside programing system where MongoDb is a database system. Node js make and run server and mongodb collect and provide data. They store data. So, When we need to run server we use node js and when we need to store data we will use mongo."
+    },
+    {
+        "question": "Differences between sql and nosql databases.",
+        "answer": "SQL means Structured Query Language. Here all the system is highly organised and people need a high knowledge for operate this. Its algorithim is super structured. Thoug it has low flexiblity, it has a great sequrity ssystem. On the other hand no-SQL is not well organised. Thas why it is super flexible and very esasy to use. Mos of the cases it is secure. But sometimnes it has faced securityissues due to it's flexiblity. Then again it is very popular to the developers."
+    },
+    {
+        "question": "What is the purpose of jwt and how does it work?",
+        "answer": "JWT means JsonWeb Token which is a very powerful system for protecting dada. It basicallyprotect data using its token. When client login they issu two token for certain period of time and also protect the data from the server. It's work is creating token, save it, test it verify it and then provide data from the database. Millions of people over the world are using it and it is a very popular system."
+    }
+]

@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../firebase.init';
+import { useSignInWithGoogle, useSendEmailVerification } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
     const [err, setErr] = useState('');
     const navigate = useNavigate();
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
+    const [signInWithGoogle, user1, , error] = useSignInWithGoogle(auth);
+    const [sendEmailVerification, , errorSendVerification] = useSendEmailVerification(auth);
+
+    useEffect(() => {
+        if (user1) {
+            navigate(from, { replace: true })
+        }
+
+        if (error || errorSendVerification) {
+            setErr(error.message || errorSendVerification.message)
+        }
+    }, [error, from, navigate, user1, errorSendVerification])
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -28,8 +44,11 @@ const Register = () => {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(user => {
-                navigate('/')
-                console.log(user.user);
+                navigate('/');
+                if (!user?.user?.emailVerified) {
+                    sendEmailVerification();
+                    toast('Verification email sent');
+                }
             })
             .catch(err => {
                 setErr(err.message)
@@ -79,6 +98,14 @@ const Register = () => {
                         <p className='text-red-500'>{err}</p>
                     </div>
 
+                    {/* <div>
+                        <p>
+                            {
+                                user.
+                            }
+                        </p>
+                    </div> */}
+
                     <div>
                         <p>Haven't Account? <span className='text-blue-500'><Link to='/login'>Log In to account</Link></span></p>
                     </div>
@@ -91,6 +118,16 @@ const Register = () => {
                         </button>
                     </div>
                 </form>
+                <div className='mt-5'>
+                    <div className='flex justify-evenly items-center'>
+                        <div className='left-bar'></div>
+                        <div className='or-div px-5'>OR</div>
+                        <div className='right-bar'></div>
+                    </div>
+                    <div>
+                        <button onClick={() => signInWithGoogle()} className='bg-blue-700 hover:bg-blue-900 w-full py-2 text-white duration-700 mt-4'>SignIn With Google</button>
+                    </div>
+                </div>
             </div>
         </div>
     );

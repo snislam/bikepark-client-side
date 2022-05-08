@@ -1,0 +1,6 @@
+.left-bar,
+.right-bar {
+    width: 100%;
+    height: 2px;
+    border: 1px solid gray;
+}

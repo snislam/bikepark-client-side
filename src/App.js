@@ -13,6 +13,9 @@ import StockUpdate from './Pages/ManageInventory/StockUpdate/StockUpdate';
 import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/Register/Register';
+import 'react-toastify/dist/ReactToastify.css';
+import Blogs from './Pages/Blogs/Blogs';
+
 
 function App() {
   return (
@@ -22,6 +25,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/blogs' element={<Blogs />} />
         <Route path='/additem' element={
           <RequireAuth>
             <AddItem />
