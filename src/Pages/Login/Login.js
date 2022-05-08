@@ -1,4 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -16,32 +17,34 @@ const Login = () => {
     const [loader, showLoader, hideLoader] = useLoadingSpin();
 
     useEffect(() => {
-        if (user || user1) {
-            navigate(from, { replace: true })
-        }
+        if (user) {
 
+            navigate(from, { replace: true })
+
+        }
         if (error) {
             setErr(error.message)
         }
     }, [error, from, navigate, user, user1])
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         showLoader();
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
 
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
             .then(user => {
                 hideLoader()
-                console.log(user.user)
             })
             .catch(err => {
                 setErr(err.message)
             })
 
-        console.log(email, password);
+        const { data } = await axios.post(`http://localhost:5000/token`, { email })
+        localStorage.setItem('access-token', data);
     };
+
 
     return (
         <div className='my-10 flex bg-gray-bg1'>

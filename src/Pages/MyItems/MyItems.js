@@ -8,8 +8,8 @@ import ManageCard from '../ManageInventory/ManageCard/ManageCard';
 const MyItems = () => {
     const [items, setItems] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user)
     const email = user.email;
+
 
     // delete button function
     const handleDelete = (id) => {
@@ -19,10 +19,14 @@ const MyItems = () => {
                 .then(res => {
                     console.log(res)
                 })
-            axios.get(`http://localhost:5000/bikeitems?email=${email}`)
+            axios.get(`http://localhost:5000/mybikeitems?email=${email}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('access-token')}`
+                }
+            })
                 .then(response => {
+                    console.log(response.data)
                     setItems(response.data)
-                    toast("Delete Successful")
                 })
         } else {
             toast('Okay dear, I am keeping it up ')
@@ -31,8 +35,13 @@ const MyItems = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bikeitems?email=${email}`)
+        axios.get(`http://localhost:5000/mybikeitems?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('access-token')}`
+            }
+        })
             .then(response => {
+                console.log(response.data)
                 setItems(response.data)
             })
     }, [email])

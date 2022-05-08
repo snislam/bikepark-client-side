@@ -19,7 +19,6 @@ const AddItem = () => {
         const newAddededItem = { name, email, supplier, img, price, quantity, description }
 
         axios.post('http://localhost:5000/bikeitems', newAddededItem)
-        console.log(newAddededItem)
     }
 
     return (
