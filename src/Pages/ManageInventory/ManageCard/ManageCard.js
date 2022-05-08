@@ -1,17 +1,9 @@
-import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ManageCard = ({ product }) => {
+const ManageCard = ({ product, handleDelete }) => {
     const { name, img, price, quantity, _id } = product;
 
-    // delete button function
-    const handleDelete = () => {
-        axios.delete(`http://localhost:5000/bikeitems/${_id}`)
-            .then(res => {
-                console.log(res)
-            })
-    }
 
     return (
         <li className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 my-5 justify-items-center content-center items-center'>
