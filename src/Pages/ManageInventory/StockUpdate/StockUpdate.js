@@ -8,7 +8,7 @@ const StockUpdate = () => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/inventory/${id}`)
+        axios.get(`https://enigmatic-depths-65126.herokuapp.com/inventory/${id}`)
             .then((data) => {
                 setItem(data.data);
             })
@@ -24,7 +24,7 @@ const StockUpdate = () => {
         const newItem = { quantity: newQuantity, ...rest }
         setItem(newItem)
 
-        axios.put(`http://localhost:5000/inventory/${id}`, newItem)
+        axios.put(`https://enigmatic-depths-65126.herokuapp.com/inventory/${id}`, newItem)
 
     }
 
@@ -37,7 +37,7 @@ const StockUpdate = () => {
         const newItem = { quantity: newQuantity, ...rest }
         setItem(newItem)
 
-        axios.put(`http://localhost:5000/inventory/${id}`, newItem)
+        axios.put(`https://enigmatic-depths-65126.herokuapp.com/inventory/${id}`, newItem)
     }
 
     return (

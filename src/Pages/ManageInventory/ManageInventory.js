@@ -13,14 +13,13 @@ const ManageInventory = () => {
         const confirm = window.confirm("Are sure to delete thi item?");
         if (confirm) {
             showLoader()
-            axios.delete(`http://localhost:5000/bikeitems/${id}`)
+            axios.delete(`https://enigmatic-depths-65126.herokuapp.com/bikeitems/${id}`)
                 .then(res => {
                     hideLoader()
-                    console.log(res)
                 })
-            axios.get(`http://localhost:5000/bikeitems`)
+            axios.get(`https://enigmatic-depths-65126.herokuapp.com/bikeitems`)
                 .then(data => {
-                    setProducts(data.data)
+                    setProducts(data.data);
                     toast("Delete Successful")
                 });
         } else {
@@ -30,11 +29,12 @@ const ManageInventory = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bikeitems`)
+        axios.get(`https://enigmatic-depths-65126.herokuapp.com/bikeitems`)
             .then(data => {
                 setProducts(data.data)
             });
-    }, [])
+    }, [products])
+
     return (
         <div>
             <h2 className='text-center py-10 bg-purple-500 text-5xl font-bold text-white mb-5'>All Products Item</h2>

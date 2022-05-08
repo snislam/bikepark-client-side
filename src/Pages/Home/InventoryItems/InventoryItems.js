@@ -10,7 +10,7 @@ const InventoryItems = () => {
 
     useEffect(() => {
         showLoader()
-        axios.get(`http://localhost:5000/bikeitems`)
+        axios.get(`https://enigmatic-depths-65126.herokuapp.com/bikeitems`)
             .then(data => {
                 hideLoader();
                 const productsItem = data.data;

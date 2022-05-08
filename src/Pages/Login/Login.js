@@ -41,7 +41,7 @@ const Login = () => {
                 setErr(err.message)
             })
 
-        const { data } = await axios.post(`http://localhost:5000/token`, { email })
+        const { data } = await axios.post(`https://enigmatic-depths-65126.herokuapp.com/token`, { email })
         localStorage.setItem('access-token', data);
     };
 

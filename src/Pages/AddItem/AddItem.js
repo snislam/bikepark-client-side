@@ -18,7 +18,7 @@ const AddItem = () => {
         e.target.reset();
         const newAddededItem = { name, email, supplier, img, price, quantity, description }
 
-        axios.post('http://localhost:5000/bikeitems', newAddededItem)
+        axios.post('https://enigmatic-depths-65126.herokuapp.com/bikeitems', newAddededItem)
     }
 
     return (

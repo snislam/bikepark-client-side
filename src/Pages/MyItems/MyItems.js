@@ -15,11 +15,11 @@ const MyItems = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm("Are sure to delete thi item?");
         if (confirm) {
-            axios.delete(`http://localhost:5000/bikeitems/${id}`)
+            axios.delete(`https://enigmatic-depths-65126.herokuapp.com/bikeitems/${id}`)
                 .then(res => {
                     console.log(res)
                 })
-            axios.get(`http://localhost:5000/mybikeitems?email=${email}`, {
+            axios.get(`https://enigmatic-depths-65126.herokuapp.com/mybikeitems?email=${email}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('access-token')}`
                 }
@@ -35,7 +35,7 @@ const MyItems = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/mybikeitems?email=${email}`, {
+        axios.get(`https://enigmatic-depths-65126.herokuapp.com/mybikeitems?email=${email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access-token')}`
             }
@@ -44,7 +44,7 @@ const MyItems = () => {
                 console.log(response.data)
                 setItems(response.data)
             })
-    }, [email])
+    }, [email, items])
 
     return (
         <div>

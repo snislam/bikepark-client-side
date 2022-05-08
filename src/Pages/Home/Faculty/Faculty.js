@@ -6,7 +6,7 @@ const Faculty = () => {
     const [faculty, setFaculty] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/faculty')
+        axios.get('https://enigmatic-depths-65126.herokuapp.com/faculty')
             .then(res => {
                 setFaculty(res.data)
             })
