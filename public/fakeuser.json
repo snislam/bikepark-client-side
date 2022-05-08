@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Abdur Rahman",
+        "img": "https://i.ibb.co/8X7G90g/fac-1.jpg",
+        "role": "Managing Director"
+    },
+    {
+        "name": "Mostafizur Rahman",
+        "img": "https://i.ibb.co/MSt7KCc/fac-2.jpg",
+        "role": "CEO and Co-founder"
+    },
+    {
+        "name": "Ajajul Islam",
+        "img": "https://i.ibb.co/XXrRgVK/fac-3.jpg",
+        "role": "Head of Marketing"
+    }
+]
