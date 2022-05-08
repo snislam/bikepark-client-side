@@ -10,6 +10,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import StockUpdate from './Pages/ManageInventory/StockUpdate/StockUpdate';
+import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/Register/Register';
 
@@ -24,6 +25,11 @@ function App() {
         <Route path='/additem' element={
           <RequireAuth>
             <AddItem />
+          </RequireAuth>
+        } />
+        <Route path='/myitems' element={
+          <RequireAuth>
+            <MyItems />
           </RequireAuth>
         } />
         <Route path='/inventory' element={
