@@ -13,7 +13,6 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const [signInWithGoogle, user1, , error] = useSignInWithGoogle(auth);
-    // const [sendPasswordResetEmail, , error1] = useSendPasswordResetEmail(auth);
     const [loader, showLoader, hideLoader] = useLoadingSpin();
 
     useEffect(() => {
@@ -44,12 +43,8 @@ const Login = () => {
         console.log(email, password);
     };
 
-    const handleResetPassword = () => {
-
-    }
-
     return (
-        <div className='h-screen flex bg-gray-bg1'>
+        <div className='my-10 flex bg-gray-bg1'>
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
                     Log in to your account
@@ -80,14 +75,14 @@ const Login = () => {
                         <p className='text-red-500'>{err}</p>
                     </div>
                     <div>
-                        <p onClick={handleResetPassword} className='text-blue-500 cursor-pointer'>Reset Password</p>
+                        <Link className='text-blue-700' to='/reset-password'>Reset Password</Link>
                     </div>
 
                     <div>
-                        <p>Haven't Account? <span className='text-red-700'><Link to='/register'>Create Account</Link></span></p>
+                        <p className='mt-3'>Haven't Account? <span className='text-red-700'><Link to='/register'>Create Account</Link></span></p>
                     </div>
 
-                    <div className='flex justify-center items-center mt-6'>
+                    <div className='flex justify-center items-center mt-3'>
                         <button
                             className='bg-gray-500 duration-500 hover:bg-gray-700 py-2 w-full text-slate-200'
                         >

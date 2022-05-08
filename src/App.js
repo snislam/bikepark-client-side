@@ -15,6 +15,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/Register/Register';
 import 'react-toastify/dist/ReactToastify.css';
 import Blogs from './Pages/Blogs/Blogs';
+import ResetPassword from './Common/ResetPassword/ResetPassword';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
         <Route path='/additem' element={
           <RequireAuth>
             <AddItem />
