@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useLoadingSpin from '../../Common/hooks/useLoadingSpin';
 import auth from '../../firebase.init';
 import './Login.css'
 
@@ -13,6 +14,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const [signInWithGoogle, user1, , error] = useSignInWithGoogle(auth);
     // const [sendPasswordResetEmail, , error1] = useSendPasswordResetEmail(auth);
+    const [loader, showLoader, hideLoader] = useLoadingSpin();
 
     useEffect(() => {
         if (user || user1) {
@@ -26,12 +28,13 @@ const Login = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
+        showLoader();
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
 
         signInWithEmailAndPassword(auth, email, password)
             .then(user => {
+                hideLoader()
                 console.log(user.user)
             })
             .catch(err => {
@@ -52,6 +55,7 @@ const Login = () => {
                     Log in to your account
                 </h1>
 
+                {loader}
                 <form onSubmit={handleFormSubmit}>
                     <div>
                         <label htmlFor='email'>Email</label>

@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../firebase.init';
 import { useSignInWithGoogle, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import useLoadingSpin from '../../Common/hooks/useLoadingSpin';
 
 
 const Register = () => {
@@ -13,6 +14,7 @@ const Register = () => {
     const from = location.state?.from?.pathname || '/';
     const [signInWithGoogle, user1, , error] = useSignInWithGoogle(auth);
     const [sendEmailVerification, , errorSendVerification] = useSendEmailVerification(auth);
+    const [loader, showLoader, hideLoader] = useLoadingSpin();
 
     useEffect(() => {
         if (user1) {
@@ -42,9 +44,11 @@ const Register = () => {
             setErr('');
         }
 
+        showLoader();
         createUserWithEmailAndPassword(auth, email, password)
             .then(user => {
                 navigate('/');
+                hideLoader()
                 if (!user?.user?.emailVerified) {
                     sendEmailVerification();
                     toast('Verification email sent');
@@ -62,6 +66,7 @@ const Register = () => {
                     Create Your Account
                 </h1>
 
+                {loader}
                 <form onSubmit={handleFormSubmit}>
                     <div>
                         <label htmlFor='name'>Name</label>
