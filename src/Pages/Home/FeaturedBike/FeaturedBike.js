@@ -10,7 +10,7 @@ const FeaturedBike = () => {
                     <img className='md:origin-top-left rotate-2' src={img} alt="" />
                 </div>
                 <div className='p-3'>
-                    <h1 className='text-2xl font-semibold'>The most Valuable and Trendy Bike In this Week.</h1>
+                    <h1 className='text-2xl Ffakeont-semibold'>The most Valuable and Trendy Bike In this Week.</h1>
                     <p className='py-2'>Featured By <span className='text-purple-700 font-semibold'>Bike Park</span></p>
                     <ul className='list-decimal'>
                         <li className='ml-10'>Best deals</li>

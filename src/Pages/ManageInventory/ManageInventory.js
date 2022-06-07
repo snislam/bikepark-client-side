@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import PageTitle from '../../Common/Helmet/PageTitle';
 import useLoadingSpin from '../../Common/hooks/useLoadingSpin';
 import ManageCard from './ManageCard/ManageCard';
 
@@ -37,6 +38,7 @@ const ManageInventory = () => {
 
     return (
         <div>
+            <PageTitle title="Manage Inventories" />
             <h2 className='text-center py-10 bg-purple-500 text-5xl font-bold text-white mb-5'>All Products Item</h2>
             {loader}
             <div className='container mx-auto px-2'>

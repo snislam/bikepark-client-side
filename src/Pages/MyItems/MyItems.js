@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import PageTitle from '../../Common/Helmet/PageTitle';
 import auth from '../../firebase.init';
 import ManageCard from '../ManageInventory/ManageCard/ManageCard';
 
@@ -48,6 +49,7 @@ const MyItems = () => {
 
     return (
         <div>
+            <PageTitle title="My Items" />
             <h1 className='text-3xl py-5 bg-purple-800 text-center text-slate-50 font-medium'>Hey <span className='text-blue-400'>{user.displayName ? user.displayName : "Mr/Mis."} </span> Welcome to Bike Park. Here is the collection of your items.</h1>
             <div>
                 {

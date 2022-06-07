@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import useLoadingSpin from '../../Common/hooks/useLoadingSpin';
+import PageTitle from '../../Common/Helmet/PageTitle';
 
 
 const Register = () => {
@@ -61,6 +62,7 @@ const Register = () => {
     };
     return (
         <div className='my-10 flex bg-gray-bg1'>
+            <PageTitle title="Register" />
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
                     Create Your Account
